@@ -1,0 +1,23 @@
+[node1]
+rabbit-node1 ansible_ssh_host=34.241.108.244
+
+[node2]
+rabbit-node2 ansible_ssh_host=63.33.67.13
+
+[node3]
+rabbit-node3 ansible_ssh_host=34.254.254.112
+
+[workers]
+rabbit-node2
+rabbit-node3
+
+[all_group]
+rabbit-node1
+rabbit-node2
+rabbit-node3
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_user=ubuntu
+ansible_private_key_file=~/Downloads/available_key.pem
+ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
